@@ -1,12 +1,12 @@
 {
   "name": "image-shrink",
-  "productName": "ImageShrink",
   "version": "1.0.0",
   "description": "App to optimize images",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "nodemon --exec electron ."
+    "dev": "nodemon --exec electron .",
+    "dist": "electron-builder"
   },
   "author": "Almira Dyan Gutierrez",
   "license": "MIT",
@@ -21,5 +21,17 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "^8.0.0",
     "slash": "^3.0.0"
+  },
+  "build": {
+    "appId": "com.agd.imageshrink",
+    "productName": "ImageShrink",
+    "target": "NSIS",
+    "directory": {
+      "output": "build"
+    },
+    "nsis": {
+      "allowToChangeInstallationDirectory": true,
+      "onCLick": false
+    }
   }
 }
